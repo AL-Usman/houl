@@ -1,0 +1,59 @@
+<div class="container-sm" style="width: 700px;">
+    <div class="container-sm">
+        <div style="text-align:center;">
+          <span  style="width: 190px; font-size: 24px; font-weight: 600;">USER REGISTRATION FORM 
+        </span>
+        <br>
+        <br>
+        </div>
+      </div>
+
+    <form [formGroup]="registrationForm" (submit)="onSaveClick()">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width: 190px;">USER NAME 
+            <i style="color: red;">&nbsp; *</i></span>
+            </div>
+            <input type="text" formControlName="user" class="form-control" placeholder="user name">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width: 190px;">PASSWORD
+                <i style="color: red;">&nbsp; *</i></span>
+            </div>
+            <input type="text" formControlName="password" class="form-control" placeholder="password">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width: 190px;">CONFIRM PASSWORD
+                <i style="color: red;">&nbsp; *</i></span>
+            </div>
+            <input class="form-control" formControlName="confirmpassword" type="password" placeholder="confirm password">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 190px;">EMAIL ADDRESS
+                    <i style="color: red;">&nbsp; *</i></span>
+              </div>
+            <input type="text" class="form-control" formControlName="email" placeholder="Your Email" id="mail" name="email">
+            <div class="input-group-append">
+              <span class="input-group-text" style="width: 130px;">@example.com</span>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="width: 190px;">PHONE NUMBER
+                <i style="color: red;">&nbsp; *</i></span>
+            </div>
+            <input type="text" class="form-control" formControlName="phone" placeholder="Phone number only numbers">
+          </div>
+
+          <div class="form">
+            <div style="text-align: right;">
+                <button type="button" class="btn btn-success" style="width: 200px; margin-right: 10px;">CANCEL</button>
+                <button type="submit" class="btn btn-success" style="width: 200px;">REGISTER</button>
+              </div>
+         
+          </div>
+      </form>
+</div>
