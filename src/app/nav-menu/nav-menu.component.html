@@ -1,0 +1,15 @@
+<div class="topnav">
+    <a class="nav-link" href="#">My First Project</a>
+    <a class="active" [routerLink]='["/home"]' id="home" routerLink="home" >Home</a>
+    <a class="nav-link" [routerLink]='["/login"]' id="login" routerLink="login" 
+    (click)="onClickLogin()">
+      Login
+    </a>
+      <a class="nav-link" [routerLink]='["/register"]' routerLink="register">
+        Register
+      </a>
+    <div class="topnav-right">
+      <a href="#">Welcome {{UserName}}</a>
+    </div>
+  </div>
+  <br>

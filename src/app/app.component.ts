@@ -11,15 +11,15 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'demo';
   tableData: any;
+  UserName?: string;
   readonly url = 'http://localhost:5000/tableData';
 
-  constructor(private http: HttpClient) { }
-
-  getTable() {
-    this.getDataFromAPI().subscribe(res=>this.tableData=res);
+  constructor(private http: HttpClient) { 
+   
   }
 
-  getDataFromAPI(): Observable<any> {
-    return this.http.get<any>(this.url);
+  ngOnInit(): void {
+
   }
+ 
 }

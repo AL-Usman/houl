@@ -1,19 +1,2 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">My First Project</a>
-    </li>
-    <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-      <a class="nav-link" [routerLink]='["/login"]' routerLink="login">
-        Login
-      </a>
-  </li>
-  <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-    <a class="nav-link" [routerLink]='["/register"]' routerLink="register">
-      Register
-    </a>
-</li>
-  </ul>
-</nav>
-<br>
+<app-nav-menu (afterClick)='ngOnInit()'></app-nav-menu>
 <router-outlet></router-outlet>
