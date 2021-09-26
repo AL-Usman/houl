@@ -1,30 +1,53 @@
 <div class="container-sm" style="width: 500px;">
-    <div class="container-sm">
-        <div style="text-align:center;">
-          <span  style="width: 190px; font-size: 24px; font-weight: 600;">USER LOGIN 
-        </span>
-        <br>
-        <br>
-        </div>
+  <div class="container-sm">
+      <div style="text-align:center;">
+        <span  style="width: 190px; font-size: 24px; font-weight: 600;">USER LOGIN 
+      </span>
+      <br>
+      <br>
       </div>
+    </div>
+  <form>
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 190px;">USER NAME 
+          <i style="color: red;">&nbsp; *</i></span>
+          </div>
+          <input type="text" class="form-control" id="user" placeholder="user name">
+        </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" style="width: 190px;">USER NAME 
-            <i style="color: red;">&nbsp; *</i></span>
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 190px;">PASSWORD
+              <i style="color: red;">&nbsp; *</i></span>
+          </div>
+          <input type="text" class="form-control" id="password" placeholder="password">
+        </div>
+        <div class="form">
+          <div style="text-align: right;">
+               <button type="button" class="btn btn-success" 
+               (click)="checkUser()"
+                style="width: 200px;">SIGN IN</button>
             </div>
-            <input type="text" class="form-control"  id="user" placeholder="user name">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" style="width: 190px;">PASSWORD
-                <i style="color: red;">&nbsp; *</i></span>
-            </div>
-            <input type="text" class="form-control" id="password" placeholder="password">
-          </div>
-          <div class="form">
-            <div style="text-align: right;">
-                 <button type="button" class="btn btn-success" (click)="checkUser()"
-                  style="width: 200px;">SIGN IN</button>
-              </div>        
-          </div>
+       
+        </div>
+    </form>
+    <br>
+    <table style="width: 100%; text-align: right;">
+      <tr>
+        <td>
+          <span style=" font-size: larger; font-weight: bold; ">
+            If not registered please click here to 
+            <a [routerLink]='["/register"]' id="register" routerLink="register" 
+             style="cursor:pointer; font-size: larger; font-weight: 600;">Register </a></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span style=" font-size: larger; font-weight: bold; ">
+            Forget your password click here to 
+            <a [routerLink]='["/reset"]' id="login" routerLink="reset" 
+             style="cursor:pointer; font-size: larger; font-weight: 600;">Reset password </a></span>
+        </td>
+      </tr>
+    </table>
 </div>

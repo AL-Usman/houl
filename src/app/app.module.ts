@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

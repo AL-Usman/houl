@@ -1,15 +1,27 @@
 <div class="topnav">
-    <a class="nav-link" href="#">My First Project</a>
-    <a class="active" [routerLink]='["/home"]' id="home" routerLink="home" >Home</a>
-    <a class="nav-link" [routerLink]='["/login"]' id="login" routerLink="login" 
-    (click)="onClickLogin()">
+  <a class="nav-link" href="#">My First Project</a>
+  <a class="active" [routerLink]='["/home"]' id="home" routerLink="home" >Home</a>
+  <a class="nav-link" [routerLink]='["/home"]' id="newPage" routerLink="home" 
+  >
+    New page
+  </a>
+  <div *ngIf="loggedUser" class="topnav-right">
+    <a href="#" style="color: white;">Welcome {{UserName}} 
+      </a>
+  </div>
+  <div class="topnav-right">
+    <a *ngIf="!loggedUser" class="nav-link" [routerLink]='["/login"]' id="login" routerLink="login" 
+    >
       Login
     </a>
-      <a class="nav-link" [routerLink]='["/register"]' routerLink="register">
-        Register
-      </a>
-    <div class="topnav-right">
-      <a href="#">Welcome {{UserName}}</a>
-    </div>
+    <a *ngIf="loggedUser" class="nav-link" href="#" (click)="logOut()"
+    >
+      LogOut
+    </a>
+    <a class="nav-link"
+    [routerLink]='["/profile"]' id="newPage" routerLink="profile"  >
+    <img src="../assets/profile.png" style="height: 25px; margin-top: -5px;" alt="Los Angeles">
+    </a>
   </div>
-  <br>
+</div>
+<br>

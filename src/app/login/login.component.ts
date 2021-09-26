@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Output, EventEmitter } from '@angular/core';
+import { CanActiveService } from '../can-active.service';
+import { UserLoggedService } from '../user-logged.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,9 @@ import { Output, EventEmitter } from '@angular/core';
 export class LoginComponent implements OnInit {
   UserName:string = '';
   @Output() public afterClick: EventEmitter<string> = new EventEmitter();
-  constructor(private http: HttpClient,private router:Router) { }
+  constructor(private http: HttpClient, private canActive: CanActiveService,
+    private userLogged: UserLoggedService, private router:Router) { }
+
   ngOnChanges() {
   }
   
@@ -28,7 +32,11 @@ export class LoginComponent implements OnInit {
     this.userAPICall(obj).subscribe(res => {
       this.UserName = res.Table[0].UserName;
     });
-    sessionStorage.setItem('UserName',this.UserName);
+    setTimeout(() => {
+      sessionStorage.setItem('UserName', this.UserName);
+      this.userLogged.changeMessage(this.UserName);
+      this.router.navigate(['/home']);
+    },100);
    }
 
 

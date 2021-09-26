@@ -1,22 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CanActiveService } from './can-active.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  { path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
-},
-{ path: 'home', component: HomeComponent, data: {
-  isHome: true,
-  show: true  }
-},
-  { path: 'login', component: LoginComponent
-  },
-  { path: 'register', component: RegisterComponent
-  }
+  { path: '', redirectTo: '', pathMatch: 'full', canActivate: [CanActiveService]},
+  { path: 'home', component: HomeComponent, canActivate: [CanActiveService]},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent } 
 ];
 
 @NgModule({
