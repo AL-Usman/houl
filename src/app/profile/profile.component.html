@@ -1,1 +1,84 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="./assets/profile.png" alt="Card image">
+                <div class="card-body" style="text-align: center;">
+                    <h4 class="card-title">Welcome {{ProfileData?.UserName}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <label for="email2" class="mb-2 mr-sm-2"><span style="font-weight:bold;">User Name:</span> {{ProfileData?.UserName}}</label>
+                          <input type="text" class="form-control" id="UserName"
+                          value={{ProfileData?.UserName}}
+                          placeholder="Enter user name" name="UserName">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success mb-2" style="margin-top:30px;" (click)="ChangeUserName(ProfileData)">Update</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <label for="email2" class="mb-2 mr-sm-2"><span style="font-weight:bold;">Password:</span> {{ProfileData?.Password}}</label>
+                          <input type="text" class="form-control" id="Password"
+                          value={{ProfileData?.Password}}
+                          placeholder="Enter password" name="Password">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success mb-2" style="margin-top:30px;"
+                             (click)="ChangePassword(ProfileData)">Update</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <label for="email2" class="mb-2 mr-sm-2"><span style="font-weight:bold;">Email:</span> {{ProfileData?.EmailAddress}}</label>
+                          <input type="text" class="form-control" id="email"
+                          value={{ProfileData?.EmailAddress}}
+                           placeholder="Enter email" name="email">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success mb-2" style="margin-top:30px;" (click)="ChangeEmailAddress(ProfileData)">Update</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <label for="email2" class="mb-2 mr-sm-2"><span style="font-weight:bold;">Phone:</span>  {{ProfileData?.PhoneNumber}}</label>
+                          <input type="text" class="form-control" id="PhoneNumber"
+                          value={{ProfileData?.PhoneNumber}}
+                          placeholder="Enter phone number" name="PhoneNumber">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success mb-2" style="margin-top:30px;" (click)="ChangePhoneNumber(ProfileData)">Update</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

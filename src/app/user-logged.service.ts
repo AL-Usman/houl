@@ -5,10 +5,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserLoggedService {
-  private user = new BehaviorSubject('');
+  private user = new BehaviorSubject(sessionStorage.getItem('UserName')?.toString() || '');
   userLogged = this.user.asObservable();
-  constructor() { }
+  constructor() {
+  }
   changeMessage(userName: string) {
-     this.user.next(userName);
+    this.user.next(userName);
   }
 }

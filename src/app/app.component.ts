@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserLoggedService } from './user-logged.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,17 +11,18 @@ import { Observable } from 'rxjs';
 })
 
 export class AppComponent {
-  title = 'demo';
-  tableData: any;
-  UserName?: string;
-  readonly url = 'http://localhost:5000/tableData';
-
-  constructor(private http: HttpClient) { 
-   
+  UserName: string = '';
+  constructor(private http: HttpClient,private userLogged: UserLoggedService) { 
   }
 
-  ngOnInit(): void {
-
+  ngOnInit(): void {  
+     if(sessionStorage.getItem('UserName') != null) {  
+      this.UserName = sessionStorage.getItem('UserName') as string || '';
+      this.userLogged.changeMessage(this.UserName);
+     }else
+     {
+       console.log('no session found');
+     }
   }
  
 }
