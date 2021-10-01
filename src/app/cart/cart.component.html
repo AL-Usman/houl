@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" style="width: 110px;">
+                Search here.</span>
+        </div>
+        <input type="text" class="form-control" id="search" 
+        
+        (keyup)="onKey($event)"
+        placeholder="enter medicine name to serarch">
+    </div>
+<table >
+    <tr>
+        <th>
+            medicine name
+        </th>
+        <th>
+            expiry date
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            dicount
+        </th>
+        <th>
+            quantity
+        </th>
+        <th>
+            ADD
+        </th>
+    </tr>
+    <tr *ngFor='let item of cartSearchData'>
+        <td>
+            {{item.MedicineName}}
+        </td>
+        <td>
+            {{item.ExpiryDate}}
+        </td>
+        <td>
+            {{item.RetailPrice}} Inr
+        </td>
+        <td>
+            {{item.Discount}} %
+        </td>
+        <td>
+            <input type="text" style="width: 60px;" id="quantity"  placeholder="1" value="1">
+     
+        </td>
+        <td>
+            <button type="button" class="btn btn-success"
+            style="width:60px;" (click)="saveCartData(item)">Add</button>
+        
+        </td>
+    </tr>
+</table>
+</div>

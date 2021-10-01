@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     HomeComponent,
     NavMenuComponent,
-    ProfileComponent
+    ProfileComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

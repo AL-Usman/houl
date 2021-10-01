@@ -25,10 +25,14 @@ export class ProfileComponent implements OnInit {
         });
       }
       );
+      console.log('printing for Flask api');
+      this.flaskAPICheck().subscribe(res => 
+        console.log(res));
   }
   getProfileData(obj: any): Observable<any> {
     return this.http.post<any>('http://localhost:58896/api/GetProfileData', obj);
   }
+
   ChangeUserName(PData: any) {
     const obj = {
       UserID: PData.UserID,
@@ -84,5 +88,11 @@ export class ProfileComponent implements OnInit {
   updateProfileData(obj: any): Observable<any> {
     return this.http.post<any>('http://localhost:58896/api/UpdateProfileData', obj);
   }
+
+  flaskAPICheck(): Observable<any> {
+    return this.http.post<any>('http://localhost:5000/api/getUser', null);
+  }
+
+  //http://localhost:5000/api/getUser
   //UpdateProfileData
 }
