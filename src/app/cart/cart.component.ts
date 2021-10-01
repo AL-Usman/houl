@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
   cartSearchData: any;
+  cartCount: any;
   ngOnInit(): void {
   }
   onKey(event: any) {
@@ -34,9 +35,11 @@ saveCartData(item: any) {
     Quantity: (document.getElementById('quantity') as HTMLInputElement).value
   }
   this.saveCartDatainDB(obj).subscribe( res=> {
-
+    debugger;
+   this.cartCount = res[0].CountValue;
+   console.log(this.cartCount);
   })
- console.log(obj);
+
 }
 
 saveCartDatainDB(cartData: any): Observable<any> {

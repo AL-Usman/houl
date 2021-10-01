@@ -1,4 +1,22 @@
 <div class="container">
+    
+<div class="row">
+    <div class="col" style="text-align: right;">
+        <table align="right">
+            <tr>
+                <td>
+                    <span style="background-color: red; color: white;" 
+                    class="badge badge-pill badge-success">{{cartCount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img style="width: 40px;;" src="../assets/cart.png">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" style="width: 110px;">
@@ -9,7 +27,7 @@
         (keyup)="onKey($event)"
         placeholder="enter medicine name to serarch">
     </div>
-<table >
+<table class="tableClass">
     <tr>
         <th>
             medicine name
