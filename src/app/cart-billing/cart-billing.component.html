@@ -1,1 +1,57 @@
-<p>cart-billing works!</p>
+<table class="tableClass">
+    <tr>
+        <th>
+            medicine name
+        </th>
+        <th>
+            expiry date
+        </th>
+        <th>
+            quantity
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            discount
+        </th>
+        <th>
+            final price
+        </th>
+        <th>
+            Edit quantity
+        </th>
+        <th>
+            Remove
+        </th>
+    </tr>
+    <tr *ngFor='let item of cartbillingData'>
+        <td>
+            {{item.MedicineName}}
+        </td>
+        <td>
+            {{item.ExpiryDate}}
+        </td>
+        <td>
+            {{item.Quantity}}
+        </td>
+        <td>
+            {{item.RetailPrice}}
+        </td>
+        <td>
+            {{item.Discount}} %
+        </td>
+        <td>
+            {{item.finalprice}}
+        </td>
+        <td>
+            <input type="text" style="width: 60px;" id="quantity"  placeholder="1" value="1">
+     
+        </td>
+        <td>
+            <button type="button" class="btn btn-success"
+            style="width:60px;">Remove</button>
+        
+        </td>
+    </tr>
+</table>

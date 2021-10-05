@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanActiveService } from './can-active.service';
+import { CartBillingComponent } from './cart-billing/cart-billing.component';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent } ,
   { path: 'profile', component: ProfileComponent , canActivate: [CanActiveService]},
-  {path: 'cart', component: CartComponent , canActivate: [CanActiveService]}
+  {path: 'cart', component: CartComponent , canActivate: [CanActiveService]},
+  {path: 'cartBilling', component: CartBillingComponent , canActivate: [CanActiveService]}
 ];
 
 @NgModule({

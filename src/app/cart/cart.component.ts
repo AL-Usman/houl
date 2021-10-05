@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private toastr: ToastrService,
+    private router:Router) { }
   cartSearchData: any;
   cartCount: any;
   ngOnInit(): void {
@@ -23,9 +26,14 @@ export class CartComponent implements OnInit {
            this.cartSearchData = res;
     });
   }
-
+  showSuccess() {
+    this.toastr.success('Successfull...', 'Item Saved in cart');
+  }
+  showError() {
+    this.toastr.error('Somthing went wrong..', 'No item');
+  }
   searchMedecineByText(searchText: any): Observable<any> {
-    console.log('calling api funtion');
+   
     return this.http.post<any>('http://localhost:58896/api/getCartData',searchText);
 }
 saveCartData(item: any) {
@@ -39,11 +47,18 @@ saveCartData(item: any) {
    this.cartCount = res[0].CountValue;
    console.log(this.cartCount);
   })
-
+  this.showError();
+  (document.getElementById('quantity') as HTMLInputElement).value = 
+  
+  (document.getElementById('quantity') as HTMLInputElement).value + '1';
 }
 
 saveCartDatainDB(cartData: any): Observable<any> {
   console.log('calling api funtion');
   return this.http.post<any>('http://localhost:58896/api/saveCartData',cartData);
+}
+
+navigateToCart() {
+  this.router.navigate(['/cartBilling']);
 }
 }
