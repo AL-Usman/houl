@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CartBillingComponent implements OnInit {
   cartbillingData: any;
+  quantity: any = 0;
   constructor(private http: HttpClient,  private router:Router) { }
 
   ngOnInit() {
@@ -22,5 +23,14 @@ this.cartbillingData = res;
   }
   loadCartBillingData(obj: any): Observable<any> {
     return this.http.post<any>('http://localhost:58896/api/CartBilling',obj);
+}
+addClick() {
+  (document.getElementById('txtInputQuantity') as HTMLInputElement).value = 
+  (Number((document.getElementById('txtInputQuantity') as HTMLInputElement).value) + 1).toString()
+}
+minusClick() {
+  (document.getElementById('txtInputQuantity') as HTMLInputElement).value = 
+  (Number((document.getElementById('txtInputQuantity') as HTMLInputElement).value) - 1).toString()
+
 }
 }

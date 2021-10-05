@@ -47,10 +47,7 @@ saveCartData(item: any) {
    this.cartCount = res[0].CountValue;
    console.log(this.cartCount);
   })
-  this.showError();
-  (document.getElementById('quantity') as HTMLInputElement).value = 
-  
-  (document.getElementById('quantity') as HTMLInputElement).value + '1';
+  this.showSuccess();
 }
 
 saveCartDatainDB(cartData: any): Observable<any> {

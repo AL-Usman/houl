@@ -20,3 +20,7 @@
     background-color: #04AA6D;
     color: white;
   }
+
+  .AddButton {
+    width: 60px; height: 40px; font-size: 25px; font-weight: bold;
+  }

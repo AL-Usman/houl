@@ -45,12 +45,17 @@
             {{item.finalprice}}
         </td>
         <td>
-            <input type="text" style="width: 60px;" id="quantity"  placeholder="1" value="1">
-     
+            <button type="button" class="btn AddButton" (click)="addClick()"
+            >+</button>
+            <input type="text" style="width: 60px; height: 40px; font-weight: bold;"
+             id="txtInputQuantity" 
+             placeholder="1" value={{item.Quantity}}>
+            <button type="button" class="btn AddButton" (click)="minusClick()"
+            >-</button>
         </td>
         <td>
             <button type="button" class="btn btn-success"
-            style="width:60px;">Remove</button>
+            style="width:60px;" >Remove</button>
         
         </td>
     </tr>
