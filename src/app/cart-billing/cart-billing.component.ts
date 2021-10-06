@@ -12,7 +12,7 @@ export class CartBillingComponent implements OnInit {
   cartbillingData: any;
   quantity: any = 0;
   constructor(private http: HttpClient,  private router:Router) { }
-
+  //comment added
   ngOnInit() {
     const obj = {
       UserName: sessionStorage.getItem('UserName')
