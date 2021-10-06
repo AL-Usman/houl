@@ -61,4 +61,7 @@ onRemoveClick(item: any) {
 RemoveMedicineRecord(obj: any): Observable<any> {
   return this.http.post<any>('http://localhost:58896/api/removeCartData',obj);
 }
+navigateToCart() {
+  this.router.navigate(['/cart']);
+}
 }

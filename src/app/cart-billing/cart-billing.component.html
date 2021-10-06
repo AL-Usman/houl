@@ -1,4 +1,59 @@
 <div class="container">
+    <div class="row bs-wizard" style="border-bottom:0; text-align:center;">
+        <div class="col bs-wizard-step complete">
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+            <a href="#" class="bs-wizard-dot">
+                <img  style="width:20px; color:white; margin-top:12px;" 
+                (click)="navigateToCart()"
+                src="../assets/cart.jpg">
+            </a>
+
+            <div class="bs-wizard-info text-center">&nbsp; CART</div>
+        </div>
+
+        <div class="col bs-wizard-step complete">
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+            <a href="#" class="bs-wizard-dot">
+                <i class="fas fa-tasks" aria-hidden="true" style="width:30px; color:white;
+                 margin-top:12px; font-family: 'Font Awesome\ 5 Free' !important;"></i>
+            </a>
+            <div class="bs-wizard-info text-center">&nbsp; CART BILLING</div>
+        </div>
+
+        <div class="col bs-wizard-step disabled">
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+            <a href="#" class="bs-wizard-dot">
+                <i class="fas fa-cogs" aria-hidden="true" style="width:30px; color:white;
+                 margin-top:12px; font-family: 'Font Awesome\ 5 Free' !important;"></i></a>
+            <div class="bs-wizard-info text-center">&nbsp; BILLING ADDRESS</div>
+        </div>
+
+        <div class="col bs-wizard-step disabled">
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+            <a href="#" class="bs-wizard-dot">
+                <i class="fas fa-thumbs-up" aria-hidden="true"
+                    style="width:30px; color:white; font-family: 'Font Awesome\ 5 Free' !important;  margin-top:12px;"></i></a>
+            <div class="bs-wizard-info text-center">&nbsp; CONFIRM</div>
+        </div>
+        <div class="col bs-wizard-step disabled">
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+            <a href="#" class="bs-wizard-dot">
+                <i class="fas fa-suitcase" aria-hidden="true" style="width:30px; color:white; font-family: 'Font Awesome\ 5 Free' !important;
+                 margin-top:12px;"></i></a>
+            <div class="bs-wizard-info text-center">&nbsp; PAYMENT</div>
+        </div>
+    </div>
+    <hr class="classhr" />
 <table class="tableClass">
     <tr>
         <th>
