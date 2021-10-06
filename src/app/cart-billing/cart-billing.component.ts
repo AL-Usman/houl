@@ -24,13 +24,41 @@ this.cartbillingData = res;
   loadCartBillingData(obj: any): Observable<any> {
     return this.http.post<any>('http://localhost:58896/api/CartBilling',obj);
 }
-addClick() {
-  (document.getElementById('txtInputQuantity') as HTMLInputElement).value = 
-  (Number((document.getElementById('txtInputQuantity') as HTMLInputElement).value) + 1).toString()
+addClick(item: any , event: any) {
+  const obj = {
+    MedicineID: item.MedicineID,
+    UserName: sessionStorage.getItem('UserName'),
+    Quantity: event.target.value
+  }//api/updateCartData
+  this.UpdateCartDataAndGetBillingData(obj).subscribe(res =>
+    {
+      this.cartbillingData = res;
+    }
+    ); 
+  console.log('every number change function call');
+ }
+
+ UpdateCartDataAndGetBillingData(obj: any): Observable<any> {
+  return this.http.post<any>('http://localhost:58896/api/updateCartData',obj);
 }
+
 minusClick() {
   (document.getElementById('txtInputQuantity') as HTMLInputElement).value = 
   (Number((document.getElementById('txtInputQuantity') as HTMLInputElement).value) - 1).toString()
 
+}
+onRemoveClick(item: any) {
+  const obj = {
+    MedicineID: item.MedicineID,
+    UserName: sessionStorage.getItem('UserName')
+  }
+  this.RemoveMedicineRecord(obj).subscribe(res =>
+    {
+      this.cartbillingData = res;
+    }
+    ); 
+}
+RemoveMedicineRecord(obj: any): Observable<any> {
+  return this.http.post<any>('http://localhost:58896/api/removeCartData',obj);
 }
 }
